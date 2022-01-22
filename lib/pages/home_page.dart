@@ -20,9 +20,9 @@ class HomePage extends StatelessWidget {
           'Welcome to Flutter',
           style: TextStyle(
             color: Colors.blueAccent,
-            fontSize: 22,
             fontWeight: FontWeight.w500,
           ),
+          textScaleFactor: 2.0,
         ),
       ),
     );
