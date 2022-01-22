@@ -1,9 +1,16 @@
+import 'package:catalog_flutter/utils/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  bool changeButton = false;
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -53,11 +60,44 @@ class LoginPage extends StatelessWidget {
                       obscureText: true,
                     ),
                     const SizedBox(
-                      height: 20.0,
+                      height: 60.0,
                     ),
-                    ElevatedButton(
-                      child: const Text('Login'),
-                      onPressed: () {},
+                    InkWell(
+                      onTap: () async {
+                        setState(() {
+                          changeButton = true;
+                        });
+                        await Future.delayed(const Duration(seconds: 1));
+                        await Navigator.pushNamed(context, MyRoutes.homeRoute);
+                        setState(() {
+                          changeButton = false;
+                        });
+                      },
+                      child: AnimatedContainer(
+                        duration: const Duration(seconds: 1),
+                        height: 60,
+                        width: changeButton ? 60 : 120,
+                        child: changeButton
+                            ? const Icon(
+                                Icons.done,
+                                color: Colors.white,
+                              )
+                            : Text(
+                                'Login',
+                                style: GoogleFonts.lato(
+                                  fontSize: 22,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontStyle: FontStyle.italic,
+                                ),
+                              ),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius:
+                              BorderRadius.circular(changeButton ? 60 : 6.0),
+                        ),
+                        alignment: Alignment.center,
+                      ),
                     ),
                   ],
                 ),
