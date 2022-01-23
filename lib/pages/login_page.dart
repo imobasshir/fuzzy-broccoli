@@ -52,6 +52,9 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 20.0,
+              ),
               Padding(
                 padding: const EdgeInsets.symmetric(
                   horizontal: 32.0,
@@ -63,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       TextFormField(
                         decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                           hintText: 'Username',
                           labelText: 'Username',
                         ),
@@ -78,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
+                          border: OutlineInputBorder(),
                           hintText: 'Password',
                           labelText: 'Password',
                         ),
