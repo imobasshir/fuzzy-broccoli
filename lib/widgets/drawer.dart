@@ -30,6 +30,7 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            onTap: () {},
             leading: const Icon(
               Icons.home,
               color: Colors.white,
@@ -45,6 +46,7 @@ class MyDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
+            onTap: () {},
             leading: const Icon(
               CupertinoIcons.profile_circled,
               color: Colors.white,

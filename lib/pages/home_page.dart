@@ -10,9 +10,6 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Catalog App',
-          style: TextStyle(
-            fontWeight: FontWeight.w300,
-          ),
         ),
       ),
       drawer: const MyDrawer(),
