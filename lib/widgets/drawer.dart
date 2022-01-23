@@ -9,7 +9,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     final imageUrl = 'https://avatars.githubusercontent.com/u/62945306?v=4';
     return Drawer(
-      backgroundColor: Colors.blue,
+      // backgroundColor: Colors.blue,
       child: ListView(
         children: [
           DrawerHeader(
@@ -33,14 +33,14 @@ class MyDrawer extends StatelessWidget {
             onTap: () {},
             leading: const Icon(
               Icons.home,
-              color: Colors.white,
+              // color: Colors.white,
             ),
             title: Text(
               'Home',
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
-                  color: Colors.white,
-                ),
+                    // color: Colors.white,
+                    ),
               ),
               textScaleFactor: 1.2,
             ),
@@ -49,14 +49,14 @@ class MyDrawer extends StatelessWidget {
             onTap: () {},
             leading: const Icon(
               CupertinoIcons.profile_circled,
-              color: Colors.white,
+              // color: Colors.white,
             ),
             title: Text(
               'Profile',
               style: GoogleFonts.lato(
                 textStyle: const TextStyle(
-                  color: Colors.white,
-                ),
+                    // color: Colors.white,
+                    ),
               ),
               textScaleFactor: 1.2,
             ),
