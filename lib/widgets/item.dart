@@ -12,9 +12,9 @@ class ItemWidget extends StatelessWidget {
         children: [
           ListTile(
             onTap: (() {}),
-            leading: Image.network(item.imageUr),
+            leading: Image.network(item.image),
             title: Text(item.name),
-            subtitle: Text(item.descrep),
+            subtitle: Text(item.desc),
             trailing: Text(
               "\$${item.price}",
               textScaleFactor: 1.4,
