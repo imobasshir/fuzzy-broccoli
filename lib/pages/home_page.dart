@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
+    await Future.delayed(const Duration(seconds: 2));
     var catalogJson = await rootBundle.loadString("files/catalog.json");
     var decodedData = jsonDecode(catalogJson);
     final productsData = decodedData["products"];
@@ -40,13 +41,15 @@ class _HomePageState extends State<HomePage> {
       drawer: const MyDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
+        child: (CatalogModel.item != null && CatalogModel.item.isNotEmpty)? ListView.builder(
           itemCount: CatalogModel.item.length,
           itemBuilder: (context, index) {
             return ItemWidget(
               item: CatalogModel.item[index],
             );
           },
+        ): const Center(
+          child: CircularProgressIndicator(),
         ),
       ),
     );
